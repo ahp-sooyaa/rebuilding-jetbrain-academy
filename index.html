@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebuilding Jetbrain Academy</title>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://hyperskill.azureedge.net/static/favicons/favicon-195.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://hyperskill.azureedge.net/static/favicons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://hyperskill.azureedge.net/static/favicons/favicon-16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- style -->
+    <link rel="stylesheet" href="dist/tailwind.css">
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+    </style>
+
+    <!-- js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <nav x-data="app()" class="bg-black text-gray-300">
+        <div class="flex justify-between items-center max-w-6xl px-4 mx-auto h-12">
+            <div class="flex space-x-4">
+                <div class="flex space-x-2 hover:bg-black-26 px-2 py-1 rounded-lg cursor-pointer">
+                    <img src="https://hyperskill.azureedge.net/static/img/icon.918d4622.svg" alt="logo" class="h-6">
+                    <div class="hidden md:block relative w-36">
+                        <img src="/images/neon-light.svg" alt="neon light" class="absolute z-10 w-full">
+                        <img src="/images/text-icon.svg" alt="text icon" class="absolute bottom-1.5">
+                    </div>
+                </div>
+                <ul class="hidden md:flex space-x-2">
+                    <li class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                        <a href="#study-plan" class="flex items-center h-full">
+                            <svg data-v-22064c67="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="list task"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-list-task mr-1 b-icon bi">
+                                <g data-v-22064c67="" transform="translate(0 0.5)">
+                                    <g data-v-22064c67="">
+                                        <path fill-rule="evenodd"
+                                            d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z">
+                                        </path>
+                                        <path
+                                            d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z">
+                                        </path>
+                                        <path fill-rule="evenodd"
+                                            d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                            Study Plan
+                        </a>
+                    </li>
+                    <li class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                        <a href="#map" class="flex items-center h-full">
+                            <svg data-v-22064c67="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="grid1x2"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="mr-2 h-5 w-6">
+                                <g data-v-22064c67="" transform="translate(0 0.25)">
+                                    <g data-v-22064c67="" transform="translate(8 8) scale(0.75 0.75) translate(-8 -8)">
+                                        <path
+                                            d="M6 1H1v14h5V1zm9 0h-5v5h5V1zm0 9v5h-5v-5h5zM0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-5z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                            Map
+                        </a>
+                    </li>
+                    <li class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                        <a href="#track" class="flex items-center h-full">
+                            <svg class="h-icon b-icon bi mr-1" style="width: 0.8em; height: 1em;" xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" viewBox="0 0 16 16" fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.751 13.539c0 .254-.224.461-.5.461H4.95a2.5 2.5 0 11.014-.923h4.287c.276 0 .5.207.5.462zM1 13.5a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0z">
+                                </path>
+                                <path
+                                    d="M2.251 2.923c-.276 0-.5.207-.5.462v3.692c0 .255.224.461.5.461h2c.276 0 .5.207.5.462s-.224.462-.5.462h-2c-.828 0-1.5-.62-1.5-1.385V3.385C.751 2.62 1.423 2 2.251 2h4c.276 0 .5.207.5.462 0 .254-.224.461-.5.461h-4zM7.251 8.462h6.5c.276 0 .5.206.5.461v3.692c0 .255-.224.462-.5.462h-1.5c-.276 0-.5.207-.5.462 0 .254.224.461.5.461h1.5c.828 0 1.5-.62 1.5-1.385V8.923c0-.765-.672-1.385-1.5-1.385h-6.5c-.276 0-.5.207-.5.462s.224.462.5.462z">
+                                </path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.05 2a2.5 2.5 0 11-.014.923H9.25c-.276 0-.5-.207-.5-.461 0-.255.224-.462.5-.462h1.799zm2.45 2a1.5 1.5 0 110-3 1.5 1.5 0 010 3z">
+                                </path>
+                            </svg>
+                            Track
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" stroke="none">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <ul class="hidden md:flex space-x-4">
+                <li class="bg-black-26 px-2 py-1 rounded-lg flex items-center space-x-2 text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input type="text" placeholder="Find topic" class="bg-transparent focus:outline-none text-sm placeholder-gray-500">
+                </li>
+                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                    <svg class="mr-1" style="width: auto; height: 0.875em;" xmlns="http://www.w3.org/2000/svg" width="18" height="15"
+                        viewBox="0 0 18 15" fill="none">
+                        <path d="M0 4.592L9 15 5.34 4.592H0z" fill="#61A0FF"></path>
+                        <path d="M5.34 4.592L9 15l3.66-10.408H5.34z" fill="#7ABFFF"></path>
+                        <path d="M9 0H3.724L5.34 4.592 9 0zm5.276 0H9l3.66 4.592L14.277 0z" fill="#61A0FF"></path>
+                        <path d="M12.66 4.592L9 0 5.34 4.592h7.32z" fill="#B2D9F6"></path>
+                        <path d="M3.724 0L0 4.592h5.34L3.723 0zm8.936 4.592H18L14.276 0 12.66 4.592z" fill="#7ABFFF"></path>
+                        <path d="M12.66 4.592L9 15l9-10.408h-5.34z" fill="#61A0FF"></path>
+                    </svg>
+                    66
+                </li>
+                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        style="width: auto; height: 1.25rem;">
+                        <path
+                            d="M12.13 7.393c1.143-.545 2.283-.936 2.283-.936v.003l.007-.007c.172.964.25 1.839.246 2.633.008 4.393-2.444 6.29-5.772 6.78-.602.092-1.227.134-1.862.134H6.94C2.145 16-3.142 9.792 4.578 4.115v.005c.002-.005.006-.009.009-.013 0 0 .348.959 1.121 2.246C7.575 3.397 8.728.313 8.835.023L8.839 0l.003.004L8.843 0c.056.09.11.18.162.269 1.708 2.798 2.68 5.156 3.125 7.124z"
+                            fill="#F97A12"></path>
+                        <path
+                            d="M12.208 12.407c.433-.878.75-2.022.808-3.458 0 0-.606.478-1.645 1.09-.29-1.436-1.068-3.192-2.598-5.373 0 0-.49 2.314-2.165 4.522-.722-.984-1.039-1.782-1.039-1.782-1.241 1.809-1.453 1.791-1.838 2.5-.384.71-.659 1.978 0 3.192.77 1.419 2.588 2.235 3.685 2.235 1.963 0 3.955-.532 5.917-3.113 0-.026-.433.08-1.125.187z"
+                            fill="#FCBA43"></path>
+                    </svg>
+                </li>
+                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                </li>
+                <li class="flex items-center bg-black-26 text-gray-400 px-2 rounded-lg cursor-pointer">
+                    <img src="https://avatars.githubusercontent.com/u/57122433?v=4" alt="avatar" class="h-8 w-8 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" stroke="none">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </li>
+            </ul>
+
+            <!-- hamburger menu -->
+            <div @click="toggleDropdown" class="block md:hidden bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- mobile dropdown -->
+        <div x-cloak x-show="show" class="sm:hidden space-y-2">
+            <ul class="px-4 mb-5">
+                <li :class="{'mb-2': active}">
+                    <a href="#study-plan" class="inline-flex items-center h-full bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                        <svg data-v-22064c67="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="list task" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="mr-2 h-5 w-6">
+                            <g data-v-22064c67="" transform="translate(0 0.5)">
+                                <g data-v-22064c67="">
+                                    <path fill-rule="evenodd"
+                                        d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z">
+                                    </path>
+                                    <path
+                                        d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z">
+                                    </path>
+                                    <path fill-rule="evenodd"
+                                        d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        Study Plan
+                    </a>
+                </li>
+                <li class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                    <a href="#map" class="flex items-center h-full">
+                        <svg data-v-22064c67="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="grid1x2"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="mr-2 h-5 w-6">
+                            <g data-v-22064c67="" transform="translate(0 0.25)">
+                                <g data-v-22064c67="" transform="translate(8 8) scale(0.75 0.75) translate(-8 -8)">
+                                    <path
+                                        d="M6 1H1v14h5V1zm9 0h-5v5h5V1zm0 9v5h-5v-5h5zM0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-5z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        Map
+                    </a>
+                </li>
+                <li class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                    <a href="#track" class="flex items-center h-full">
+                        <svg class="mr-2 h-5 w-6" style="width: 0.8em; height: 1em;" xmlns="http://www.w3.org/2000/svg" width="1em"
+                            height="1em" viewBox="0 0 16 16" fill="currentColor">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.751 13.539c0 .254-.224.461-.5.461H4.95a2.5 2.5 0 11.014-.923h4.287c.276 0 .5.207.5.462zM1 13.5a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0z">
+                            </path>
+                            <path
+                                d="M2.251 2.923c-.276 0-.5.207-.5.462v3.692c0 .255.224.461.5.461h2c.276 0 .5.207.5.462s-.224.462-.5.462h-2c-.828 0-1.5-.62-1.5-1.385V3.385C.751 2.62 1.423 2 2.251 2h4c.276 0 .5.207.5.462 0 .254-.224.461-.5.461h-4zM7.251 8.462h6.5c.276 0 .5.206.5.461v3.692c0 .255-.224.462-.5.462h-1.5c-.276 0-.5.207-.5.462 0 .254.224.461.5.461h1.5c.828 0 1.5-.62 1.5-1.385V8.923c0-.765-.672-1.385-1.5-1.385h-6.5c-.276 0-.5.207-.5.462s.224.462.5.462z">
+                            </path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.05 2a2.5 2.5 0 11-.014.923H9.25c-.276 0-.5-.207-.5-.461 0-.255.224-.462.5-.462h1.799zm2.45 2a1.5 1.5 0 110-3 1.5 1.5 0 010 3z">
+                            </path>
+                        </svg>
+                        Track
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" stroke="none">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flex px-4 space-x-2 pb-5">
+                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                    <svg class="mr-1" style="width: auto; height: 0.875em;" xmlns="http://www.w3.org/2000/svg" width="18" height="15"
+                        viewBox="0 0 18 15" fill="none">
+                        <path d="M0 4.592L9 15 5.34 4.592H0z" fill="#61A0FF"></path>
+                        <path d="M5.34 4.592L9 15l3.66-10.408H5.34z" fill="#7ABFFF"></path>
+                        <path d="M9 0H3.724L5.34 4.592 9 0zm5.276 0H9l3.66 4.592L14.277 0z" fill="#61A0FF"></path>
+                        <path d="M12.66 4.592L9 0 5.34 4.592h7.32z" fill="#B2D9F6"></path>
+                        <path d="M3.724 0L0 4.592h5.34L3.723 0zm8.936 4.592H18L14.276 0 12.66 4.592z" fill="#7ABFFF"></path>
+                        <path d="M12.66 4.592L9 15l9-10.408h-5.34z" fill="#61A0FF"></path>
+                    </svg>
+                    66
+                </li>
+                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        style="width: auto; height: 1.25rem;">
+                        <path
+                            d="M12.13 7.393c1.143-.545 2.283-.936 2.283-.936v.003l.007-.007c.172.964.25 1.839.246 2.633.008 4.393-2.444 6.29-5.772 6.78-.602.092-1.227.134-1.862.134H6.94C2.145 16-3.142 9.792 4.578 4.115v.005c.002-.005.006-.009.009-.013 0 0 .348.959 1.121 2.246C7.575 3.397 8.728.313 8.835.023L8.839 0l.003.004L8.843 0c.056.09.11.18.162.269 1.708 2.798 2.68 5.156 3.125 7.124z"
+                            fill="#F97A12"></path>
+                        <path
+                            d="M12.208 12.407c.433-.878.75-2.022.808-3.458 0 0-.606.478-1.645 1.09-.29-1.436-1.068-3.192-2.598-5.373 0 0-.49 2.314-2.165 4.522-.722-.984-1.039-1.782-1.039-1.782-1.241 1.809-1.453 1.791-1.838 2.5-.384.71-.659 1.978 0 3.192.77 1.419 2.588 2.235 3.685 2.235 1.963 0 3.955-.532 5.917-3.113 0-.026-.433.08-1.125.187z"
+                            fill="#FCBA43"></path>
+                    </svg>
+                </li>
+                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                </li>
+                <li class="flex items-center bg-black-26 text-gray-400 px-2 rounded-lg cursor-pointer">
+                    <img src="https://avatars.githubusercontent.com/u/57122433?v=4" alt="avatar" class="h-8 w-8 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" stroke="none">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        let app = () => {
+            return {
+                show: false,
+                active: true,
+
+                toggleDropdown() {
+                    this.show = !this.show
+                }
+            }
+        }
+    </script>
+</body>
+</html>
