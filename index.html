@@ -1,259 +1,1159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rebuilding Jetbrain Academy</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rebuilding Jetbrain Academy</title>
 
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="https://hyperskill.azureedge.net/static/favicons/favicon-195.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://hyperskill.azureedge.net/static/favicons/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://hyperskill.azureedge.net/static/favicons/favicon-16.png">
-    <link rel="manifest" href="/site.webmanifest">
+        <!-- favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="https://hyperskill.azureedge.net/static/favicons/favicon-195.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="https://hyperskill.azureedge.net/static/favicons/favicon-32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="https://hyperskill.azureedge.net/static/favicons/favicon-16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- style -->
-    <link rel="stylesheet" href="dist/tailwind.css">
-    <style>
-        [x-cloak] {
-            display: none;
-        }
-    </style>
+        <!-- style -->
+        <link rel="stylesheet" href="dist/tailwind.css" />
+        <style>
+            [x-cloak] {
+                display: none;
+            }
+        </style>
 
-    <!-- js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</head>
-<body>
-    <nav x-data="app()" class="bg-black text-gray-300">
-        <div class="flex justify-between items-center max-w-6xl px-4 mx-auto h-12">
-            <div class="flex space-x-4">
-                <div class="flex space-x-2 hover:bg-black-26 px-2 py-1 rounded-lg cursor-pointer">
-                    <img src="https://hyperskill.azureedge.net/static/img/icon.918d4622.svg" alt="logo" class="h-6">
-                    <div class="hidden md:block relative w-36">
-                        <img src="/images/neon-light.svg" alt="neon light" class="absolute z-10 w-full">
-                        <img src="/images/text-icon.svg" alt="text icon" class="absolute bottom-1.5">
+        <!-- js -->
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+        ></script>
+    </head>
+    <body class="bg-gray-50">
+        <nav x-data="app()" class="bg-black text-gray-300">
+            <div
+                class="flex justify-between items-center max-w-6xl px-4 mx-auto h-12"
+            >
+                <div class="flex space-x-4">
+                    <div
+                        class="flex space-x-2 hover:bg-black-26 px-2 py-1 rounded-lg cursor-pointer"
+                    >
+                        <img
+                            src="https://hyperskill.azureedge.net/static/img/icon.918d4622.svg"
+                            alt="logo"
+                            class="h-6"
+                        />
+                        <div class="hidden md:block relative w-36">
+                            <img
+                                src="./images/neon-light.svg"
+                                alt="neon light"
+                                class="absolute z-10 w-full"
+                            />
+                            <img
+                                src="./images/text-icon.svg"
+                                alt="text icon"
+                                class="absolute bottom-0"
+                            />
+                        </div>
                     </div>
+                    <ul class="hidden md:flex space-x-2">
+                        <li
+                            class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                        >
+                            <a
+                                href="#study-plan"
+                                class="flex items-center h-full"
+                            >
+                                <svg
+                                    data-v-22064c67=""
+                                    viewBox="0 0 16 16"
+                                    width="1em"
+                                    height="1em"
+                                    focusable="false"
+                                    role="img"
+                                    aria-label="list task"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    class="bi-list-task mr-1 b-icon bi"
+                                >
+                                    <g
+                                        data-v-22064c67=""
+                                        transform="translate(0 0.5)"
+                                    >
+                                        <g data-v-22064c67="">
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"
+                                            ></path>
+                                            <path
+                                                d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"
+                                            ></path>
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"
+                                            ></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                Study Plan
+                            </a>
+                        </li>
+                        <li
+                            class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                        >
+                            <a href="#map" class="flex items-center h-full">
+                                <svg
+                                    data-v-22064c67=""
+                                    viewBox="0 0 16 16"
+                                    width="1em"
+                                    height="1em"
+                                    focusable="false"
+                                    role="img"
+                                    aria-label="grid1x2"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    class="mr-2 h-5 w-6"
+                                >
+                                    <g
+                                        data-v-22064c67=""
+                                        transform="translate(0 0.25)"
+                                    >
+                                        <g
+                                            data-v-22064c67=""
+                                            transform="translate(8 8) scale(0.75 0.75) translate(-8 -8)"
+                                        >
+                                            <path
+                                                d="M6 1H1v14h5V1zm9 0h-5v5h5V1zm0 9v5h-5v-5h5zM0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-5z"
+                                            ></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                Map
+                            </a>
+                        </li>
+                        <li
+                            class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                        >
+                            <a href="#track" class="flex items-center h-full">
+                                <svg
+                                    class="h-icon b-icon bi mr-1"
+                                    style="width: 0.8em; height: 1em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="1em"
+                                    height="1em"
+                                    viewBox="0 0 16 16"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M9.751 13.539c0 .254-.224.461-.5.461H4.95a2.5 2.5 0 11.014-.923h4.287c.276 0 .5.207.5.462zM1 13.5a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0z"
+                                    ></path>
+                                    <path
+                                        d="M2.251 2.923c-.276 0-.5.207-.5.462v3.692c0 .255.224.461.5.461h2c.276 0 .5.207.5.462s-.224.462-.5.462h-2c-.828 0-1.5-.62-1.5-1.385V3.385C.751 2.62 1.423 2 2.251 2h4c.276 0 .5.207.5.462 0 .254-.224.461-.5.461h-4zM7.251 8.462h6.5c.276 0 .5.206.5.461v3.692c0 .255-.224.462-.5.462h-1.5c-.276 0-.5.207-.5.462 0 .254.224.461.5.461h1.5c.828 0 1.5-.62 1.5-1.385V8.923c0-.765-.672-1.385-1.5-1.385h-6.5c-.276 0-.5.207-.5.462s.224.462.5.462z"
+                                    ></path>
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M11.05 2a2.5 2.5 0 11-.014.923H9.25c-.276 0-.5-.207-.5-.461 0-.255.224-.462.5-.462h1.799zm2.45 2a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
+                                    ></path>
+                                </svg>
+                                Track
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    stroke="none"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 9l-7 7-7-7"
+                                    />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="hidden md:flex space-x-2">
-                    <li class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                        <a href="#study-plan" class="flex items-center h-full">
-                            <svg data-v-22064c67="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="list task"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-list-task mr-1 b-icon bi">
-                                <g data-v-22064c67="" transform="translate(0 0.5)">
+
+                <ul class="hidden md:flex space-x-4">
+                    <li
+                        class="bg-black-26 px-2 py-1 rounded-lg flex items-center space-x-2 text-gray-500"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                            />
+                        </svg>
+                        <input
+                            type="text"
+                            placeholder="Find topic"
+                            class="bg-transparent focus:outline-none text-sm placeholder-gray-500"
+                        />
+                    </li>
+                    <li
+                        class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                    >
+                        <svg
+                            class="mr-1"
+                            style="width: auto; height: 0.875em"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="15"
+                            viewBox="0 0 18 15"
+                            fill="none"
+                        >
+                            <path
+                                d="M0 4.592L9 15 5.34 4.592H0z"
+                                fill="#61A0FF"
+                            ></path>
+                            <path
+                                d="M5.34 4.592L9 15l3.66-10.408H5.34z"
+                                fill="#7ABFFF"
+                            ></path>
+                            <path
+                                d="M9 0H3.724L5.34 4.592 9 0zm5.276 0H9l3.66 4.592L14.277 0z"
+                                fill="#61A0FF"
+                            ></path>
+                            <path
+                                d="M12.66 4.592L9 0 5.34 4.592h7.32z"
+                                fill="#B2D9F6"
+                            ></path>
+                            <path
+                                d="M3.724 0L0 4.592h5.34L3.723 0zm8.936 4.592H18L14.276 0 12.66 4.592z"
+                                fill="#7ABFFF"
+                            ></path>
+                            <path
+                                d="M12.66 4.592L9 15l9-10.408h-5.34z"
+                                fill="#61A0FF"
+                            ></path>
+                        </svg>
+                        66
+                    </li>
+                    <li
+                        class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            style="width: auto; height: 1.25rem"
+                        >
+                            <path
+                                d="M12.13 7.393c1.143-.545 2.283-.936 2.283-.936v.003l.007-.007c.172.964.25 1.839.246 2.633.008 4.393-2.444 6.29-5.772 6.78-.602.092-1.227.134-1.862.134H6.94C2.145 16-3.142 9.792 4.578 4.115v.005c.002-.005.006-.009.009-.013 0 0 .348.959 1.121 2.246C7.575 3.397 8.728.313 8.835.023L8.839 0l.003.004L8.843 0c.056.09.11.18.162.269 1.708 2.798 2.68 5.156 3.125 7.124z"
+                                fill="#F97A12"
+                            ></path>
+                            <path
+                                d="M12.208 12.407c.433-.878.75-2.022.808-3.458 0 0-.606.478-1.645 1.09-.29-1.436-1.068-3.192-2.598-5.373 0 0-.49 2.314-2.165 4.522-.722-.984-1.039-1.782-1.039-1.782-1.241 1.809-1.453 1.791-1.838 2.5-.384.71-.659 1.978 0 3.192.77 1.419 2.588 2.235 3.685 2.235 1.963 0 3.955-.532 5.917-3.113 0-.026-.433.08-1.125.187z"
+                                fill="#FCBA43"
+                            ></path>
+                        </svg>
+                    </li>
+                    <li
+                        class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                            />
+                        </svg>
+                    </li>
+                    <li
+                        class="flex items-center bg-black-26 text-gray-400 px-2 rounded-lg cursor-pointer"
+                    >
+                        <img
+                            src="https://avatars.githubusercontent.com/u/57122433?v=4"
+                            alt="avatar"
+                            class="h-8 w-8 rounded-full"
+                        />
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            stroke="none"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
+                    </li>
+                </ul>
+
+                <!-- hamburger menu -->
+                <div
+                    @click="toggleDropdown"
+                    class="block md:hidden bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1"
+                            d="M4 6h16M4 12h16m-7 6h7"
+                        />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- mobile dropdown -->
+            <div x-cloak x-show="show" class="sm:hidden space-y-2">
+                <ul class="px-4 mb-5">
+                    <li :class="{'mb-2': active}">
+                        <a
+                            href="#study-plan"
+                            class="inline-flex items-center h-full bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                        >
+                            <svg
+                                data-v-22064c67=""
+                                viewBox="0 0 16 16"
+                                width="1em"
+                                height="1em"
+                                focusable="false"
+                                role="img"
+                                aria-label="list task"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                class="mr-2 h-5 w-6"
+                            >
+                                <g
+                                    data-v-22064c67=""
+                                    transform="translate(0 0.5)"
+                                >
                                     <g data-v-22064c67="">
-                                        <path fill-rule="evenodd"
-                                            d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z">
-                                        </path>
                                         <path
-                                            d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z">
-                                        </path>
-                                        <path fill-rule="evenodd"
-                                            d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z">
-                                        </path>
+                                            fill-rule="evenodd"
+                                            d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"
+                                        ></path>
+                                        <path
+                                            d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"
+                                        ></path>
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"
+                                        ></path>
                                     </g>
                                 </g>
                             </svg>
                             Study Plan
                         </a>
                     </li>
-                    <li class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                    <li
+                        class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                    >
                         <a href="#map" class="flex items-center h-full">
-                            <svg data-v-22064c67="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="grid1x2"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="mr-2 h-5 w-6">
-                                <g data-v-22064c67="" transform="translate(0 0.25)">
-                                    <g data-v-22064c67="" transform="translate(8 8) scale(0.75 0.75) translate(-8 -8)">
+                            <svg
+                                data-v-22064c67=""
+                                viewBox="0 0 16 16"
+                                width="1em"
+                                height="1em"
+                                focusable="false"
+                                role="img"
+                                aria-label="grid1x2"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                class="mr-2 h-5 w-6"
+                            >
+                                <g
+                                    data-v-22064c67=""
+                                    transform="translate(0 0.25)"
+                                >
+                                    <g
+                                        data-v-22064c67=""
+                                        transform="translate(8 8) scale(0.75 0.75) translate(-8 -8)"
+                                    >
                                         <path
-                                            d="M6 1H1v14h5V1zm9 0h-5v5h5V1zm0 9v5h-5v-5h5zM0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-5z">
-                                        </path>
+                                            d="M6 1H1v14h5V1zm9 0h-5v5h5V1zm0 9v5h-5v-5h5zM0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-5z"
+                                        ></path>
                                     </g>
                                 </g>
                             </svg>
                             Map
                         </a>
                     </li>
-                    <li class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
+                    <li
+                        class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                    >
                         <a href="#track" class="flex items-center h-full">
-                            <svg class="h-icon b-icon bi mr-1" style="width: 0.8em; height: 1em;" xmlns="http://www.w3.org/2000/svg" width="1em"
-                                height="1em" viewBox="0 0 16 16" fill="currentColor">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M9.751 13.539c0 .254-.224.461-.5.461H4.95a2.5 2.5 0 11.014-.923h4.287c.276 0 .5.207.5.462zM1 13.5a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0z">
-                                </path>
+                            <svg
+                                class="mr-2 h-5 w-6"
+                                style="width: 0.8em; height: 1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1em"
+                                height="1em"
+                                viewBox="0 0 16 16"
+                                fill="currentColor"
+                            >
                                 <path
-                                    d="M2.251 2.923c-.276 0-.5.207-.5.462v3.692c0 .255.224.461.5.461h2c.276 0 .5.207.5.462s-.224.462-.5.462h-2c-.828 0-1.5-.62-1.5-1.385V3.385C.751 2.62 1.423 2 2.251 2h4c.276 0 .5.207.5.462 0 .254-.224.461-.5.461h-4zM7.251 8.462h6.5c.276 0 .5.206.5.461v3.692c0 .255-.224.462-.5.462h-1.5c-.276 0-.5.207-.5.462 0 .254.224.461.5.461h1.5c.828 0 1.5-.62 1.5-1.385V8.923c0-.765-.672-1.385-1.5-1.385h-6.5c-.276 0-.5.207-.5.462s.224.462.5.462z">
-                                </path>
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M11.05 2a2.5 2.5 0 11-.014.923H9.25c-.276 0-.5-.207-.5-.461 0-.255.224-.462.5-.462h1.799zm2.45 2a1.5 1.5 0 110-3 1.5 1.5 0 010 3z">
-                                </path>
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M9.751 13.539c0 .254-.224.461-.5.461H4.95a2.5 2.5 0 11.014-.923h4.287c.276 0 .5.207.5.462zM1 13.5a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0z"
+                                ></path>
+                                <path
+                                    d="M2.251 2.923c-.276 0-.5.207-.5.462v3.692c0 .255.224.461.5.461h2c.276 0 .5.207.5.462s-.224.462-.5.462h-2c-.828 0-1.5-.62-1.5-1.385V3.385C.751 2.62 1.423 2 2.251 2h4c.276 0 .5.207.5.462 0 .254-.224.461-.5.461h-4zM7.251 8.462h6.5c.276 0 .5.206.5.461v3.692c0 .255-.224.462-.5.462h-1.5c-.276 0-.5.207-.5.462 0 .254.224.461.5.461h1.5c.828 0 1.5-.62 1.5-1.385V8.923c0-.765-.672-1.385-1.5-1.385h-6.5c-.276 0-.5.207-.5.462s.224.462.5.462z"
+                                ></path>
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M11.05 2a2.5 2.5 0 11-.014.923H9.25c-.276 0-.5-.207-.5-.461 0-.255.224-.462.5-.462h1.799zm2.45 2a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
+                                ></path>
                             </svg>
                             Track
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" stroke="none">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-4 w-4"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                stroke="none"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 9l-7 7-7-7"
+                                />
                             </svg>
                         </a>
                     </li>
                 </ul>
-            </div>
-            
-            <ul class="hidden md:flex space-x-4">
-                <li class="bg-black-26 px-2 py-1 rounded-lg flex items-center space-x-2 text-gray-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    <input type="text" placeholder="Find topic" class="bg-transparent focus:outline-none text-sm placeholder-gray-500">
-                </li>
-                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                    <svg class="mr-1" style="width: auto; height: 0.875em;" xmlns="http://www.w3.org/2000/svg" width="18" height="15"
-                        viewBox="0 0 18 15" fill="none">
-                        <path d="M0 4.592L9 15 5.34 4.592H0z" fill="#61A0FF"></path>
-                        <path d="M5.34 4.592L9 15l3.66-10.408H5.34z" fill="#7ABFFF"></path>
-                        <path d="M9 0H3.724L5.34 4.592 9 0zm5.276 0H9l3.66 4.592L14.277 0z" fill="#61A0FF"></path>
-                        <path d="M12.66 4.592L9 0 5.34 4.592h7.32z" fill="#B2D9F6"></path>
-                        <path d="M3.724 0L0 4.592h5.34L3.723 0zm8.936 4.592H18L14.276 0 12.66 4.592z" fill="#7ABFFF"></path>
-                        <path d="M12.66 4.592L9 15l9-10.408h-5.34z" fill="#61A0FF"></path>
-                    </svg>
-                    66
-                </li>
-                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                        style="width: auto; height: 1.25rem;">
-                        <path
-                            d="M12.13 7.393c1.143-.545 2.283-.936 2.283-.936v.003l.007-.007c.172.964.25 1.839.246 2.633.008 4.393-2.444 6.29-5.772 6.78-.602.092-1.227.134-1.862.134H6.94C2.145 16-3.142 9.792 4.578 4.115v.005c.002-.005.006-.009.009-.013 0 0 .348.959 1.121 2.246C7.575 3.397 8.728.313 8.835.023L8.839 0l.003.004L8.843 0c.056.09.11.18.162.269 1.708 2.798 2.68 5.156 3.125 7.124z"
-                            fill="#F97A12"></path>
-                        <path
-                            d="M12.208 12.407c.433-.878.75-2.022.808-3.458 0 0-.606.478-1.645 1.09-.29-1.436-1.068-3.192-2.598-5.373 0 0-.49 2.314-2.165 4.522-.722-.984-1.039-1.782-1.039-1.782-1.241 1.809-1.453 1.791-1.838 2.5-.384.71-.659 1.978 0 3.192.77 1.419 2.588 2.235 3.685 2.235 1.963 0 3.955-.532 5.917-3.113 0-.026-.433.08-1.125.187z"
-                            fill="#FCBA43"></path>
-                    </svg>
-                </li>
-                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                    </svg>
-                </li>
-                <li class="flex items-center bg-black-26 text-gray-400 px-2 rounded-lg cursor-pointer">
-                    <img src="https://avatars.githubusercontent.com/u/57122433?v=4" alt="avatar" class="h-8 w-8 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" stroke="none">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </li>
-            </ul>
-
-            <!-- hamburger menu -->
-            <div @click="toggleDropdown" class="block md:hidden bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </div>
-        </div>
-
-        <!-- mobile dropdown -->
-        <div x-cloak x-show="show" class="sm:hidden space-y-2">
-            <ul class="px-4 mb-5">
-                <li :class="{'mb-2': active}">
-                    <a href="#study-plan" class="inline-flex items-center h-full bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                        <svg data-v-22064c67="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="list task" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="mr-2 h-5 w-6">
-                            <g data-v-22064c67="" transform="translate(0 0.5)">
-                                <g data-v-22064c67="">
-                                    <path fill-rule="evenodd"
-                                        d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z">
-                                    </path>
-                                    <path
-                                        d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z">
-                                    </path>
-                                    <path fill-rule="evenodd"
-                                        d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
-                        Study Plan
-                    </a>
-                </li>
-                <li class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                    <a href="#map" class="flex items-center h-full">
-                        <svg data-v-22064c67="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="grid1x2"
-                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="mr-2 h-5 w-6">
-                            <g data-v-22064c67="" transform="translate(0 0.25)">
-                                <g data-v-22064c67="" transform="translate(8 8) scale(0.75 0.75) translate(-8 -8)">
-                                    <path
-                                        d="M6 1H1v14h5V1zm9 0h-5v5h5V1zm0 9v5h-5v-5h5zM0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-5z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
-                        Map
-                    </a>
-                </li>
-                <li class="hover:bg-black-26 hover:text-white text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                    <a href="#track" class="flex items-center h-full">
-                        <svg class="mr-2 h-5 w-6" style="width: 0.8em; height: 1em;" xmlns="http://www.w3.org/2000/svg" width="1em"
-                            height="1em" viewBox="0 0 16 16" fill="currentColor">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.751 13.539c0 .254-.224.461-.5.461H4.95a2.5 2.5 0 11.014-.923h4.287c.276 0 .5.207.5.462zM1 13.5a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0z">
-                            </path>
+                <ul class="flex px-4 space-x-2 pb-5">
+                    <li
+                        class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                    >
+                        <svg
+                            class="mr-1"
+                            style="width: auto; height: 0.875em"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="15"
+                            viewBox="0 0 18 15"
+                            fill="none"
+                        >
                             <path
-                                d="M2.251 2.923c-.276 0-.5.207-.5.462v3.692c0 .255.224.461.5.461h2c.276 0 .5.207.5.462s-.224.462-.5.462h-2c-.828 0-1.5-.62-1.5-1.385V3.385C.751 2.62 1.423 2 2.251 2h4c.276 0 .5.207.5.462 0 .254-.224.461-.5.461h-4zM7.251 8.462h6.5c.276 0 .5.206.5.461v3.692c0 .255-.224.462-.5.462h-1.5c-.276 0-.5.207-.5.462 0 .254.224.461.5.461h1.5c.828 0 1.5-.62 1.5-1.385V8.923c0-.765-.672-1.385-1.5-1.385h-6.5c-.276 0-.5.207-.5.462s.224.462.5.462z">
-                            </path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M11.05 2a2.5 2.5 0 11-.014.923H9.25c-.276 0-.5-.207-.5-.461 0-.255.224-.462.5-.462h1.799zm2.45 2a1.5 1.5 0 110-3 1.5 1.5 0 010 3z">
-                            </path>
+                                d="M0 4.592L9 15 5.34 4.592H0z"
+                                fill="#61A0FF"
+                            ></path>
+                            <path
+                                d="M5.34 4.592L9 15l3.66-10.408H5.34z"
+                                fill="#7ABFFF"
+                            ></path>
+                            <path
+                                d="M9 0H3.724L5.34 4.592 9 0zm5.276 0H9l3.66 4.592L14.277 0z"
+                                fill="#61A0FF"
+                            ></path>
+                            <path
+                                d="M12.66 4.592L9 0 5.34 4.592h7.32z"
+                                fill="#B2D9F6"
+                            ></path>
+                            <path
+                                d="M3.724 0L0 4.592h5.34L3.723 0zm8.936 4.592H18L14.276 0 12.66 4.592z"
+                                fill="#7ABFFF"
+                            ></path>
+                            <path
+                                d="M12.66 4.592L9 15l9-10.408h-5.34z"
+                                fill="#61A0FF"
+                            ></path>
                         </svg>
-                        Track
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" stroke="none">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        66
+                    </li>
+                    <li
+                        class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            style="width: auto; height: 1.25rem"
+                        >
+                            <path
+                                d="M12.13 7.393c1.143-.545 2.283-.936 2.283-.936v.003l.007-.007c.172.964.25 1.839.246 2.633.008 4.393-2.444 6.29-5.772 6.78-.602.092-1.227.134-1.862.134H6.94C2.145 16-3.142 9.792 4.578 4.115v.005c.002-.005.006-.009.009-.013 0 0 .348.959 1.121 2.246C7.575 3.397 8.728.313 8.835.023L8.839 0l.003.004L8.843 0c.056.09.11.18.162.269 1.708 2.798 2.68 5.156 3.125 7.124z"
+                                fill="#F97A12"
+                            ></path>
+                            <path
+                                d="M12.208 12.407c.433-.878.75-2.022.808-3.458 0 0-.606.478-1.645 1.09-.29-1.436-1.068-3.192-2.598-5.373 0 0-.49 2.314-2.165 4.522-.722-.984-1.039-1.782-1.039-1.782-1.241 1.809-1.453 1.791-1.838 2.5-.384.71-.659 1.978 0 3.192.77 1.419 2.588 2.235 3.685 2.235 1.963 0 3.955-.532 5.917-3.113 0-.026-.433.08-1.125.187z"
+                                fill="#FCBA43"
+                            ></path>
                         </svg>
-                    </a>
+                    </li>
+                    <li
+                        class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                            />
+                        </svg>
+                    </li>
+                    <li
+                        class="flex items-center bg-black-26 text-gray-400 px-2 rounded-lg cursor-pointer"
+                    >
+                        <img
+                            src="https://avatars.githubusercontent.com/u/57122433?v=4"
+                            alt="avatar"
+                            class="h-8 w-8 rounded-full"
+                        />
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            stroke="none"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="max-w-6xl mx-auto px-4 py-4 mb-14">
+            <h1 class="text-[2.5rem] font-semibold mb-2">
+                What is your learning goal?
+            </h1>
+            <h2 class="text-[2rem] font-semibold">Explore all tracks</h2>
+            <p class="text-gray-800 mb-5">
+                Find the right one by choosing a specific area of knowledge
+            </p>
+            <ul class="mb-5">
+                <li
+                    class="bg-white rounded-full inline-block border-2 px-3 py-1 border-indigo-400 text-gray-700 mb-2 mr-2"
+                >
+                    All tracks
+                    <span
+                        class="bg-indigo-500 text-white rounded text-xs px-1 py-0.5 ml-1"
+                        >31</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Beginner-friendly
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >11</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Free
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >1</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Python
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >9</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Java
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >6</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Kotlin
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >3</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Math
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >3</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Frontend
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >3</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    SQL
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >3</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Scala
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >1</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Go
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >1</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Data Science
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >4</span
+                    >
+                </li>
+                <li
+                    class="bg-white rounded-full inline-block border px-3 py-1 text-gray-700 mb-2 mr-2"
+                >
+                    Biology & Bioinformatics
+                    <span
+                        class="bg-gray-200 text-gray-900 rounded text-xs px-1 py-0.5 ml-1"
+                        >1</span
+                    >
                 </li>
             </ul>
-            <ul class="flex px-4 space-x-2 pb-5">
-                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                    <svg class="mr-1" style="width: auto; height: 0.875em;" xmlns="http://www.w3.org/2000/svg" width="18" height="15"
-                        viewBox="0 0 18 15" fill="none">
-                        <path d="M0 4.592L9 15 5.34 4.592H0z" fill="#61A0FF"></path>
-                        <path d="M5.34 4.592L9 15l3.66-10.408H5.34z" fill="#7ABFFF"></path>
-                        <path d="M9 0H3.724L5.34 4.592 9 0zm5.276 0H9l3.66 4.592L14.277 0z" fill="#61A0FF"></path>
-                        <path d="M12.66 4.592L9 0 5.34 4.592h7.32z" fill="#B2D9F6"></path>
-                        <path d="M3.724 0L0 4.592h5.34L3.723 0zm8.936 4.592H18L14.276 0 12.66 4.592z" fill="#7ABFFF"></path>
-                        <path d="M12.66 4.592L9 15l9-10.408h-5.34z" fill="#61A0FF"></path>
-                    </svg>
-                    66
-                </li>
-                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                        style="width: auto; height: 1.25rem;">
-                        <path
-                            d="M12.13 7.393c1.143-.545 2.283-.936 2.283-.936v.003l.007-.007c.172.964.25 1.839.246 2.633.008 4.393-2.444 6.29-5.772 6.78-.602.092-1.227.134-1.862.134H6.94C2.145 16-3.142 9.792 4.578 4.115v.005c.002-.005.006-.009.009-.013 0 0 .348.959 1.121 2.246C7.575 3.397 8.728.313 8.835.023L8.839 0l.003.004L8.843 0c.056.09.11.18.162.269 1.708 2.798 2.68 5.156 3.125 7.124z"
-                            fill="#F97A12"></path>
-                        <path
-                            d="M12.208 12.407c.433-.878.75-2.022.808-3.458 0 0-.606.478-1.645 1.09-.29-1.436-1.068-3.192-2.598-5.373 0 0-.49 2.314-2.165 4.522-.722-.984-1.039-1.782-1.039-1.782-1.241 1.809-1.453 1.791-1.838 2.5-.384.71-.659 1.978 0 3.192.77 1.419 2.588 2.235 3.685 2.235 1.963 0 3.955-.532 5.917-3.113 0-.026-.433.08-1.125.187z"
-                            fill="#FCBA43"></path>
-                    </svg>
-                </li>
-                <li class="flex items-center bg-black-26 text-gray-400 px-2 py-1 rounded-lg cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                    </svg>
-                </li>
-                <li class="flex items-center bg-black-26 text-gray-400 px-2 rounded-lg cursor-pointer">
-                    <img src="https://avatars.githubusercontent.com/u/57122433?v=4" alt="avatar" class="h-8 w-8 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" stroke="none">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
-    <script>
-        let app = () => {
-            return {
-                show: false,
-                active: true,
+            <div class="grid grid-cols-2 gap-8">
+                <div
+                    class="relative bg-white shadow-lg p-5 rounded-2xl border border-indigo-500"
+                >
+                    <div
+                        class="absolute transform -translate-y-1/2 top-0 right-3 flex items-center space-x-3"
+                    >
+                        <div
+                            class="text-xs text-white bg-indigo-500 px-2 py-0.5 rounded-full"
+                        >
+                            Selected
+                        </div>
+                        <div
+                            class="text-xs bg-yellow-500 px-2 py-0.5 rounded-full"
+                        >
+                            Beta
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="border rounded-full">
+                                <img
+                                    src="https://hyperskill.azureedge.net/media/tracks/9368deaab97441f192fd4c8db42cb9bc/python.svg"
+                                    alt="track cover"
+                                    width="34"
+                                    height="34"
+                                />
+                            </div>
+                            <span class="text-gray-500"
+                                >168K already learning</span
+                            >
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg
+                                data-v-9c201d56=""
+                                viewBox="0 0 16 16"
+                                width="1em"
+                                height="1em"
+                                focusable="false"
+                                role="img"
+                                aria-label="star fill"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                class="text-yellow-500"
+                            >
+                                <g
+                                    data-v-9c201d56=""
+                                    transform="translate(0 -0.5)"
+                                >
+                                    <g data-v-9c201d56="">
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                        ></path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="font-bold text-xl text-gray-900"
+                                >4.6</span
+                            >
+                        </div>
+                    </div>
+                    <h1 class="text-xl font-semibold mb-3">Python Core</h1>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex items-center gap-x-1.5">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="15"
+                                fill="currentColor"
+                                viewBox="0 0 16 15"
+                                class="text-gray-500"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M8.06.101a1.413 1.413 0 0 0-1.049 0L.296 2.788A.471.471 0 0 0 0 3.225v8.16a.942.942 0 0 0 .593.874l6.768 2.707a.47.47 0 0 0 .35 0l6.769-2.707a.942.942 0 0 0 .592-.874v-8.16a.471.471 0 0 0-.295-.437L8.06.1zm-.699.875a.471.471 0 0 1 .35 0l6.118 2.446a.5.5 0 0 1 .314.474l-.013.63v6.858l-5.696 2.278-.698.303a.5.5 0 0 1-.393.002L6.28 13.52.942 11.385V3.92h.001v-.03a.5.5 0 0 1 .314-.468l.489-.195-.007-.003L7.361.976z"
+                                    clip-rule="evenodd"
+                                ></path>
+                                <path
+                                    d="M13.718 12a6.702 6.702 0 0 0-12.436 0H.427a7.503 7.503 0 0 1 14.146 0h-.855z"
+                                ></path>
+                            </svg>
+                            <span class="text-gray-900 text-sm"
+                                >32 projects</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-x-1.5">
+                            <svg
+                                viewBox="0 0 16 16"
+                                width="1em"
+                                height="1em"
+                                focusable="false"
+                                role="img"
+                                aria-label="clock"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                class="text-gray-500"
+                            >
+                                <g data-v-9c201d56="">
+                                    <path
+                                        d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
+                                    ></path>
+                                    <path
+                                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
+                                    ></path>
+                                </g>
+                            </svg>
+                            <span class="text-gray-900 text-sm">132 hours</span>
+                        </div>
+                    </div>
+                    <div
+                        class="relative text-gray-700 tracking-wide max-h-[4.5rem] overflow-hidden"
+                    >
+                        This track will guide you on your path of mastering
+                        Python, one of the much-in-demand languages in today's
+                        environment. Known for its straightforward syntax,
+                        Python is easy to learn and use, which accounts for its
+                        popularity and makes its community grow every day. This
+                        track is dedicated to core Python skills that will give
+                        you a solid base and allow you to pursue any further
+                        direction, be it Backend Development or Data Science.
+                        <div
+                            class="absolute bottom-0 right-0 w-14 h-5 bg-gradient-to-r from-transparent to-white"
+                        ></div>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg p-5 rounded-2xl">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="border rounded-full">
+                                <img
+                                    src="https://hyperskill.azureedge.net/media/tracks/9368deaab97441f192fd4c8db42cb9bc/python.svg"
+                                    alt="track cover"
+                                    width="34"
+                                    height="34"
+                                />
+                            </div>
+                            <span class="text-gray-500"
+                                >168K already learning</span
+                            >
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg
+                                data-v-9c201d56=""
+                                viewBox="0 0 16 16"
+                                width="1em"
+                                height="1em"
+                                focusable="false"
+                                role="img"
+                                aria-label="star fill"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                class="text-yellow-500"
+                            >
+                                <g
+                                    data-v-9c201d56=""
+                                    transform="translate(0 -0.5)"
+                                >
+                                    <g data-v-9c201d56="">
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                        ></path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span class="font-bold text-xl text-gray-900"
+                                >4.6</span
+                            >
+                        </div>
+                    </div>
+                    <h1 class="text-xl font-semibold mb-3">Python Core</h1>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex items-center gap-x-1.5">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="15"
+                                fill="currentColor"
+                                viewBox="0 0 16 15"
+                                class="text-gray-500"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M8.06.101a1.413 1.413 0 0 0-1.049 0L.296 2.788A.471.471 0 0 0 0 3.225v8.16a.942.942 0 0 0 .593.874l6.768 2.707a.47.47 0 0 0 .35 0l6.769-2.707a.942.942 0 0 0 .592-.874v-8.16a.471.471 0 0 0-.295-.437L8.06.1zm-.699.875a.471.471 0 0 1 .35 0l6.118 2.446a.5.5 0 0 1 .314.474l-.013.63v6.858l-5.696 2.278-.698.303a.5.5 0 0 1-.393.002L6.28 13.52.942 11.385V3.92h.001v-.03a.5.5 0 0 1 .314-.468l.489-.195-.007-.003L7.361.976z"
+                                    clip-rule="evenodd"
+                                ></path>
+                                <path
+                                    d="M13.718 12a6.702 6.702 0 0 0-12.436 0H.427a7.503 7.503 0 0 1 14.146 0h-.855z"
+                                ></path>
+                            </svg>
+                            <span class="text-gray-900 text-sm"
+                                >32 projects</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-x-1.5">
+                            <svg
+                                viewBox="0 0 16 16"
+                                width="1em"
+                                height="1em"
+                                focusable="false"
+                                role="img"
+                                aria-label="clock"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                class="text-gray-500"
+                            >
+                                <g data-v-9c201d56="">
+                                    <path
+                                        d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
+                                    ></path>
+                                    <path
+                                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
+                                    ></path>
+                                </g>
+                            </svg>
+                            <span class="text-gray-900 text-sm">132 hours</span>
+                        </div>
+                    </div>
+                    <div
+                        class="relative text-gray-700 tracking-wide max-h-[4.5rem] overflow-hidden"
+                    >
+                        This track will guide you on your path of mastering
+                        Python, one of the much-in-demand languages in today's
+                        environment. Known for its straightforward syntax,
+                        Python is easy to learn and use, which accounts for its
+                        popularity and makes its community grow every day. This
+                        track is dedicated to core Python skills that will give
+                        you a solid base and allow you to pursue any further
+                        direction, be it Backend Development or Data Science.
+                        <div
+                            class="absolute bottom-0 right-0 w-14 h-5 bg-gradient-to-r from-transparent to-white"
+                        ></div>
+                    </div>
+                    <div class="space-y-3 mt-7">
+                        <div class="flex space-x-2 items-center">
+                            <div class="bg-gray-200 p-2 inline-block rounded">
+                                <svg
+                                    data-v-3a0f7cbc=""
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="1em"
+                                    height="1em"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                    class="h-icon"
+                                    style="width: 15px; height: 15px"
+                                    data-component-name="alt-topic"
+                                >
+                                    <g clip-path="url(#uicons-inlkk23pcx)">
+                                        <path
+                                            d="M10.4 4.159H2.518A1.644 1.644 0 0 1 .877 2.518 1.644 1.644 0 0 1 2.517.877h9.75a.438.438 0 1 0 0-.877h-9.75A2.522 2.522 0 0 0 0 2.518v10.964A2.521 2.521 0 0 0 2.518 16h9.748a.438.438 0 0 0 .439-.438v-6.16l-.88.147v5.575H2.518a1.643 1.643 0 0 1-1.641-1.642V4.43c.441.379 1.015.61 1.64.61h7.444l.44-.88H10.4z"
+                                        ></path>
+                                        <path
+                                            d="M2.656 2.118a.438.438 0 0 0 0 .877h8.232a.438.438 0 1 0 0-.877H2.656zM9.76 12.16H6.88a.48.48 0 0 0 0 .96h2.88a.48.48 0 1 0 0-.96z"
+                                        ></path>
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M12.24 2.388a1.28 1.28 0 0 1 1.748-.468l.555.32a1.28 1.28 0 0 1 .468 1.748l-2.56 4.434-2.105.448-.666-2.048 2.56-4.434zm1.428.086.555.32a.64.64 0 0 1 .234.874l-.32.555-1.663-.96.32-.555a.64.64 0 0 1 .874-.234zm.149 2.303-1.663-.96-1.777 3.078.4 1.23 1.263-.27 1.777-3.078z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="uicons-inlkk23pcx">
+                                            <path d="M0 0h16v16H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="text-sm w-full">
+                                <span class="font-semibold"
+                                    >22 / 206 (10%)</span
+                                >
+                                <span class="text-gray-500"
+                                    >completed topics</span
+                                >
+                                <div
+                                    class="relative rounded overflow-hidden h-1 mt-1"
+                                >
+                                    <div
+                                        class="absolute z-10 h-full w-1/3 bg-gradient-to-r from-indigo-500 to-green-400"
+                                    ></div>
+                                    <div
+                                        class="absolute z-0 h-full w-full bg-gray-200"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2 items-center">
+                            <div class="bg-gray-200 p-2 inline-block rounded">
+                                <svg
+                                    data-v-3a0f7cbc=""
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="1em"
+                                    height="1em"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                    class="h-icon"
+                                    style="width: 15px; height: 15px"
+                                    data-component-name="alt-topic"
+                                >
+                                    <g clip-path="url(#uicons-inlkk23pcx)">
+                                        <path
+                                            d="M10.4 4.159H2.518A1.644 1.644 0 0 1 .877 2.518 1.644 1.644 0 0 1 2.517.877h9.75a.438.438 0 1 0 0-.877h-9.75A2.522 2.522 0 0 0 0 2.518v10.964A2.521 2.521 0 0 0 2.518 16h9.748a.438.438 0 0 0 .439-.438v-6.16l-.88.147v5.575H2.518a1.643 1.643 0 0 1-1.641-1.642V4.43c.441.379 1.015.61 1.64.61h7.444l.44-.88H10.4z"
+                                        ></path>
+                                        <path
+                                            d="M2.656 2.118a.438.438 0 0 0 0 .877h8.232a.438.438 0 1 0 0-.877H2.656zM9.76 12.16H6.88a.48.48 0 0 0 0 .96h2.88a.48.48 0 1 0 0-.96z"
+                                        ></path>
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M12.24 2.388a1.28 1.28 0 0 1 1.748-.468l.555.32a1.28 1.28 0 0 1 .468 1.748l-2.56 4.434-2.105.448-.666-2.048 2.56-4.434zm1.428.086.555.32a.64.64 0 0 1 .234.874l-.32.555-1.663-.96.32-.555a.64.64 0 0 1 .874-.234zm.149 2.303-1.663-.96-1.777 3.078.4 1.23 1.263-.27 1.777-3.078z"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="uicons-inlkk23pcx">
+                                            <path d="M0 0h16v16H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="text-sm w-full">
+                                <span class="font-semibold"
+                                    >22 / 206 (10%)</span
+                                >
+                                <span class="text-gray-500"
+                                    >completed topics</span
+                                >
+                                <div
+                                    class="relative rounded overflow-hidden h-1 mt-1"
+                                >
+                                    <div
+                                        class="absolute z-10 h-full w-1/3 bg-gradient-to-r from-indigo-500 to-green-400"
+                                    ></div>
+                                    <div
+                                        class="absolute z-0 h-full w-full bg-gray-200"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-                toggleDropdown() {
-                    this.show = !this.show
-                }
-            }
-        }
-    </script>
-</body>
+        <footer>
+            <div class="bg-[#1a1a1a] py-3 text-sm">
+                <div
+                    class="flex items-center justify-between max-w-6xl mx-auto px-4 text-white"
+                >
+                    <div class="flex space-x-2">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            data-component-name="emoji-rocket"
+                        >
+                            <path
+                                fill="#33495F"
+                                d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z"
+                            ></path>
+                            <path
+                                fill="#fff"
+                                d="M7.75 4.875c.637-.112 1.013-.487 1.125-1.125.113.638.488 1.013 1.125 1.125-.637.113-1.012.487-1.125 1.125-.112-.638-.488-1.012-1.125-1.125z"
+                                opacity=".2"
+                            ></path>
+                            <path
+                                fill="#fff"
+                                d="M13.75 19.625c.637-.113 1.013-.488 1.125-1.125.113.637.488 1.012 1.125 1.125-.637.113-1.012.488-1.125 1.125-.112-.637-.488-1.012-1.125-1.125zm-12-4.5c.638-.113 1.013-.488 1.125-1.125.112.637.488 1.012 1.125 1.125-.637.113-1.013.488-1.125 1.125-.112-.637-.487-1.012-1.125-1.125z"
+                                opacity=".1"
+                            ></path>
+                            <path
+                                fill="#E94B35"
+                                d="M24 .025c-.039.004-.03.014-.025-.025-5.829.745-9.135 3.07-11.009 5.509a12.64 12.64 0 0 0-.195.261l-.002.003c-2.015 2.776-2.247 5.68-2.269 6.477h-.25L10 13l1 1 .75-.25v-.25a9.948 9.948 0 0 0 1.767-.193c.182-.045.233.02.233.943v2.25c0 .452.236.624.486.373.606-.607.751-.755 2.125-2.132 1.04-1.041 1.17-1.648.74-2.764C19.988 10.342 23.108 6.972 24 .025z"
+                            ></path>
+                            <path
+                                fill="#C23824"
+                                d="M12 7c-.43-.173-.5-.25-1-.25s-1.046.345-1.715 1.016l-2.13 2.127c-.299.3.16.357.845.357 1.308 0 2.324-.031 2.698.355C11.19 11.115 12 7 12 7zm12-7a23.946 23.946 0 0 1-.68 3.42c-.262-.493-.64-1.091-1.125-1.569-.538-.53-1.203-.907-1.707-1.146A22.604 22.604 0 0 1 24 0z"
+                            ></path>
+                            <path
+                                fill="#fff"
+                                d="M17.1 11.977c.43 1.115.328 1.697-.713 2.738l-2.151 2.159c-.25.25-.478.078-.486-.374v-.163c.75-.75 2.422-2.235 2.75-2.837.192-.353.088-.914 0-1.25-.828.44-2.879 1.024-2.983 1.057-.79.162-1.4.179-1.767.193v-.164S19.244 10.92 24 0c-.898 7.012-4.012 10.342-6.9 11.977z"
+                                opacity=".3"
+                            ></path>
+                            <path
+                                fill="#fff"
+                                d="M18.375 7a1.627 1.627 0 0 1-1.625-1.625c0-.896.729-1.625 1.625-1.625S20 4.479 20 5.375 19.271 7 18.375 7z"
+                            ></path>
+                            <path
+                                fill="#C23824"
+                                d="M18.375 4a1.375 1.375 0 1 1 0 2.75 1.375 1.375 0 0 1 0-2.75zm0-.5A1.877 1.877 0 0 0 16.5 5.375c0 1.034.84 1.875 1.875 1.875a1.877 1.877 0 0 0 1.875-1.875c0-1.034-.84-1.875-1.875-1.875z"
+                            ></path>
+                            <path
+                                fill="#FFD164"
+                                d="m11.897 12.265.02.055c.007.017.017.041.025.066l.03.087.035.106c.012.039.026.082.037.125l.04.14.036.15a5.056 5.056 0 0 1 .14 1.078 3.152 3.152 0 0 1-.072.754 2.63 2.63 0 0 1-.104.355c-.086.23-.207.443-.364.63-.078.095-.168.18-.258.267a7.934 7.934 0 0 1-.899.737 7.47 7.47 0 0 1-4.032 1.345l-.112.002h-.1l-.164-.005-.104-.006-.037-.003-.003-.037-.007-.104L6 17.844v-.101l.002-.112a7.462 7.462 0 0 1 1.826-4.649c.083-.098.17-.19.256-.282.087-.09.172-.18.266-.258.188-.157.4-.278.63-.364.116-.043.235-.078.356-.105a3.174 3.174 0 0 1 .754-.072 5.075 5.075 0 0 1 1.078.14l.15.037.14.04c.043.01.086.025.124.037.04.013.073.022.107.034l.087.03.066.025.055.021z"
+                            ></path>
+                            <path
+                                fill="#C23824"
+                                d="m13.092 11.07.018.049c.01.03.024.075.034.124a.604.604 0 0 1-.011.333c-.02.054-.057.1-.092.154l-.115.173-.277.416a50.39 50.39 0 0 1-.712 1.024l-.203.28-.211.284a35.89 35.89 0 0 1-.889 1.133c-.15.184-.296.365-.44.538l-.211.256c-.07.083-.134.169-.208.24a.78.78 0 0 1-.256.168c-.097.04-.202.067-.305.091a6.126 6.126 0 0 1-.843.139c-.082.008-.16.01-.23.016-.07.004-.136.004-.192.006l-.147-.001-.094-.004-.033-.002-.002-.033-.004-.095c0-.04-.002-.09 0-.147.001-.055 0-.122.005-.191.005-.07.008-.148.016-.23a6.124 6.124 0 0 1 .138-.844 2.05 2.05 0 0 1 .092-.304.78.78 0 0 1 .168-.256c.071-.074.157-.138.24-.208l.255-.212c.174-.144.355-.29.54-.44a36.445 36.445 0 0 1 1.132-.888l.284-.211.28-.204a41.092 41.092 0 0 1 1.023-.711l.416-.277.174-.116c.054-.034.1-.071.154-.091a.604.604 0 0 1 .333-.01c.05.009.093.022.124.033l.049.018z"
+                            ></path>
+                        </svg>
+                        <div class="font-bold">
+                            Help us develop a better product for you and other
+                            learners!
+                        </div>
+                    </div>
+                    <div
+                        class="border border-white rounded px-2 pb-1 hover:bg-white hover:text-gray-900 cursor-pointer"
+                    >
+                        I agree to receive invites to research activites
+                        (interviews, surveys)
+                    </div>
+                </div>
+            </div>
+            <div class="bg-black py-10">
+                <div
+                    class="max-w-6xl mx-auto text-white flex items-start space-x-24"
+                >
+                    <div class="flex items-center space-x-2">
+                        <img
+                            src="https://hyperskill.azureedge.net/static/img/icon.918d4622.svg"
+                            alt="logo"
+                            class="h-6"
+                        />
+                        <img
+                            src="./images/text-icon.svg"
+                            alt="text icon"
+                            class=""
+                        />
+                    </div>
+                    <div class="flex flex-col space-y-3 text-gray-300">
+                        <a href="">Tracks</a>
+                        <a href="">Pricing</a>
+                        <a href="">For organizations</a>
+                    </div>
+                    <div class="flex flex-col space-y-3 text-gray-300">
+                        <a href="">About</a>
+                        <a href="">Contribute</a>
+                        <a href="">Careers</a>
+                    </div>
+                    <div class="text-gray-300 text-sm">
+                        <div
+                            class="border border-gray-300 text-white rounded px-2 pb-1"
+                        >
+                            Become beta tester
+                        </div>
+                        <div class="mt-2">Be the first to see what's new</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            let app = () => {
+                return {
+                    show: false,
+                    active: true,
+
+                    toggleDropdown() {
+                        this.show = !this.show;
+                    },
+                };
+            };
+        </script>
+    </body>
 </html>
